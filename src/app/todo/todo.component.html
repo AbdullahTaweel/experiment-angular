@@ -1,0 +1,15 @@
+<a routerLink="/">Home</a>
+<div *ngFor="let task of tasks">
+    <div>
+        {{task.completed ? 'complete' : 'incomplete'}} {{task.created | date: 'dd-MM-yyyy hh:mm'}}
+    </div>
+    <div>
+        {{task.description}}
+    </div>
+    <button (click)="task.completed = !task.completed">Toggle </button>
+</div>
+<div>
+    <input type="text" [formControl]='newDescription' />
+    <button (click)="addTask()">New Task</button>
+
+</div>
